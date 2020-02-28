@@ -145,7 +145,12 @@
     <Compile Include="Models\DataModelContext.cs" />
     <Compile Include="Controllers\ExaminationController.cs" />
     <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Options.cs" />
+    <Compile Include="Models\PaperQuestion.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Paper.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
