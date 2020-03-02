@@ -18,7 +18,7 @@ namespace UniversityExaminationMVC.Models
         Exam e;
         Opertaion_On_Exam(string et)
         {
-            e=
+           
         }
         public void Addpapers()
         {
