@@ -1,10 +1,57 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>Exam List</h2>
-@ViewBag.Student.Name
-@ViewBag.Student.Email
+<!DOCTYPE html>
 
-@ViewBag.Student.DOB
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body background="D:\Git\OnlineUniversityExamination\UniversityExaminationMVC\UniversityExaminationMVC\Images">
+    <div>
+        @Html.Partial("Navigation_Bar")
+    </div>
+    <br /><br />
+    <div>
+        <div class="card " style="width:30%">
+            <div class="card-header">
+                <h4>Semester</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Exam Type</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Papers</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

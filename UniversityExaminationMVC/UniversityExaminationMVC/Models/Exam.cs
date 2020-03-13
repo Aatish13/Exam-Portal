@@ -13,12 +13,18 @@ namespace UniversityExaminationMVC.Models
         void Addpapers();
     }
 
-    public class Opertaion_On_Exam : Exam_Operation
+    public class Exam_Work : Exam_Operation
     {
         Exam e;
-        Opertaion_On_Exam(string et)
+        Exam_Factory ef;
+        DataModelContext db;
+        public Exam_Work(string et,string sem)
         {
-            e=
+            db = new DataModelContext();
+            ef = new Exam_Factory();
+            e = ef.GetExam(et);
+            e.sem = sem;
+            e.branch = null;
         }
         public void Addpapers()
         {
@@ -27,7 +33,8 @@ namespace UniversityExaminationMVC.Models
 
         public void Create_Exam()
         {
-            throw new NotImplementedException();
+            db.Exams.Add(e);
+            db.SaveChanges();
         }
 
         public void Schedule_Exam()
@@ -38,12 +45,17 @@ namespace UniversityExaminationMVC.Models
 
     public class Exam_Factory
     {
-        public void GetExam(string name)
+        public Exam GetExam(string type)
         {
-            if(name.Equals(""))
+            if(type.Equals("Internal"))
             {
-
+                return new Sessional_Exam();
             }
+            else if(type.Equals("External"))
+            {
+                return new External_Exam();
+            }
+            return null;
         }
     }
 
@@ -57,11 +69,12 @@ namespace UniversityExaminationMVC.Models
         [Required]
         public string sem { get; set; }
         public Branch branch { get; set; }
+        ICollection<Paper> papers { get; set; }
     }
 
     public class Sessional_Exam:Exam
     {
-        Sessional_Exam()
+        public Sessional_Exam()
         {
             Name = "Sessional";
             type = "Internal";
@@ -70,9 +83,9 @@ namespace UniversityExaminationMVC.Models
 
     public class External_Exam : Exam
     {
-        External_Exam()
+        public External_Exam()
         {
-            Name = "Extnal";
+            Name = "External";
             type = "External";
         }
     }

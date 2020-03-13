@@ -23,6 +23,8 @@ namespace UniversityExaminationMVC.Models
          public virtual DbSet<Faculty> Facultys { get; set; }
 
         public virtual DbSet<Student> Students { get; set; }
+
+        public virtual DbSet<Exam> Exams { get; set; }
     }
 
     //public class MyEntity
