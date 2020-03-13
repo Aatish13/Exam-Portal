@@ -122,7 +122,6 @@
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Login\Student.cshtml" />
     <Content Include="Views\Login\Faculty.cshtml" />
-    <Content Include="Views\Examination\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -141,6 +140,10 @@
     <Compile Include="Migrations\202002070626189_Migratons.cs" />
     <Compile Include="Migrations\202002070626189_Migratons.Designer.cs">
       <DependentUpon>202002070626189_Migratons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002280708526_Update.cs" />
+    <Compile Include="Migrations\202002280708526_Update.Designer.cs">
+      <DependentUpon>202002280708526_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
@@ -166,7 +169,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\FacultyDashboard\Index.cshtml" />
+    <Content Include="Views\Examination\Navigation_Bar.cshtml" />
+    <Content Include="Views\Examination\Index.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002070626189_Migratons.resx">
       <DependentUpon>202002070626189_Migratons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002280708526_Update.resx">
+      <DependentUpon>202002280708526_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

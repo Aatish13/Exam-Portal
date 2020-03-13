@@ -30,5 +30,6 @@ namespace UniversityExaminationMVC.Models
 
         public virtual ICollection<PaperQuestion> PaperQuestions { get; set; }
 
+        public Exam exam { get; set; }
     }
 }
