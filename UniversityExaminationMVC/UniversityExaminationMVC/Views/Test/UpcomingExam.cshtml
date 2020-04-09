@@ -1,0 +1,60 @@
+﻿@using UniversityExaminationMVC.Models
+@{
+    ViewBag.Title = "UpcomingExam";
+    Layout = "~/Views/Shared/_LayoutPage_Student.cshtml";
+}
+<h2>Upcoming Exams</h2>
+@ViewBag.Date
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Exam ex in ViewBag.upExams)
+        {
+            <tr>
+                <th scope="row">@ex.date</th>
+                <td>@ex.Name</td>
+                <td>@ex.type</td>
+                <td></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<h2>Upcoming Papers</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Paper ex in ViewBag.upPapers)
+        {
+            <tr>
+                <th scope="row">@ex.paperDate</th>
+                <td>@ex.Name</td>
+                <td>@ex.Subject.Name</td>
+                <td><a href="avascript:void(0);" onClick="window.open('/Test/GivePaper/@ex.Id', '', 
+'fullscreen=yes, scrollbars=auto');" class="btn btn-dark">
+    Give Paper
+</a></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

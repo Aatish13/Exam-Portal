@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="~/Content/Login_Style.css" />
+    
+</head>
+<body style="background:#557A95;">
+    
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <div class="login-reg-panel" style="background-color:#343a40;">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Click here</p>
+            <label id="label-register" for="log-reg-show">Login</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+        </div>
+
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Click here</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+        <form method="post">
+            <div class="white-panel">
+                <div class="login-show">
+                    <h2>LOGIN</h2>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="register-show">
+                    <h2>REGISTER</h2>
+                    <input type="text" id="1" name="email2" placeholder="Email">
+                    <input type="password" id="2" name="password2" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <p style="font:18px"><i>As a</i></p>
+                    <label class="radio-inline"><input type="radio" name="optradio" value="Student" checked style="display:inline;"><b>Student</b></label><br />
+                    <label class="radio-inline"><input type="radio" name="optradio" value="Faculty" style="display:inline;"><b>Faculty</b></label>
+                    <input type="submit" value="Register" formaction="/Login/Register" formmethod="post">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $('.login-info-box').fadeOut();
+            $('.login-show').addClass('show-log-panel');
+        });
+
+
+        $('.login-reg-panel input[type="radio"]').on('change', function () {
+            if ($('#log-login-show').is(':checked')) {
+                $('.register-info-box').fadeOut();
+                $('.login-info-box').fadeIn();
+
+                $('.white-panel').addClass('right-log');
+                $('.register-show').addClass('show-log-panel');
+                $('.login-show').removeClass('show-log-panel');
+
+            }
+            else if ($('#log-reg-show').is(':checked')) {
+                $('.register-info-box').fadeIn();
+                $('.login-info-box').fadeOut();
+
+                $('.white-panel').removeClass('right-log');
+
+                $('.login-show').addClass('show-log-panel');
+                $('.register-show').removeClass('show-log-panel');
+            }
+        });
+
+
+    </script>
+</body>
+</html>

@@ -15,16 +15,31 @@ namespace UniversityExaminationMVC.Models
         public DataModelContext()
             : base("name=DataModelContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataModelContext, UniversityExaminationMVC.Migrations.Configuration>());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-         public virtual DbSet<Faculty> Facultys { get; set; }
-
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Branch> Branches { get; set; }
+
+
+        public virtual DbSet<Faculty> Facultys { get; set; }
+
 
         public virtual DbSet<Exam> Exams { get; set; }
+
+
+        public virtual DbSet<Paper> Papers { get; set; }
+        public virtual DbSet<PaperQuestion> PaperQuestions { get; set; }
+
+        public virtual DbSet<Question> Questions { get; set; }
+
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<PaperScore> PaperScores { get; set; }
+
+        // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }
 
     //public class MyEntity

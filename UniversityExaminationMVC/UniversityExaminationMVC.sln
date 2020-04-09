@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityExaminationMVC", "UniversityExaminationMVC\UniversityExaminationMVC.csproj", "{69B62B55-8544-4382-8FD8-AF08AD94F891}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityExaminationMVC", "UniversityExaminationMVC\UniversityExaminationMVC.csproj", "{0AAA1811-72CE-4145-B6A6-F33751955C6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{69B62B55-8544-4382-8FD8-AF08AD94F891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69B62B55-8544-4382-8FD8-AF08AD94F891}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69B62B55-8544-4382-8FD8-AF08AD94F891}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69B62B55-8544-4382-8FD8-AF08AD94F891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAA1811-72CE-4145-B6A6-F33751955C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAA1811-72CE-4145-B6A6-F33751955C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAA1811-72CE-4145-B6A6-F33751955C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAA1811-72CE-4145-B6A6-F33751955C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1FF47EC5-0D55-424A-90A9-2DCD0DB1B6E2}
+		SolutionGuid = {66CB7AEC-E6B3-4E92-B223-42829D0B95A4}
 	EndGlobalSection
 EndGlobal

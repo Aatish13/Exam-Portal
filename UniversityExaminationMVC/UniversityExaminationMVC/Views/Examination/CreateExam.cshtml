@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CreateExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card border-dark">
+    <div class="card-header text-dark"><h2>Create Exam</h2></div>
+    <div class="card-body text-dark">
+        <form method="post">
+            <label class="control-label col-md-2">Select type :~</label>
+            <input type="radio" name="type" value="Internal" class="btn btn-secondary"> Internal</input>&nbsp;&nbsp;
+            <input type="radio" name="type" value="External" class="btn btn-secondary"> External</input><br /><br />
+
+            <label class="control-label col-md-2">Sem</label><br />
+            <input class="form-control" type="number" name="sem" /><br /><br />
+
+            <label class="control-label col-md-2">Branch</label><br />
+            <input class="form-control" type="number" name="brch" /><br /><br />
+
+            <label class="control-label col-md-2">Start Date</label><br />
+    <input class="form-control" type="date" name="date" /><br /><br />
+
+            <button type="submit" class="btn btn-dark">Add Paper</button>
+        </form>
+    </div>
+</div>

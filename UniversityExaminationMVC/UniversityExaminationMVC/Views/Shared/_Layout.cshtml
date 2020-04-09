@@ -1,42 +1,160 @@
-﻿<!DOCTYPE html>
+﻿<link rel="stylesheet" href="bootstrap.min.css" />
+<script src="jquery.slim.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="~/Scripts/Side_Pannel_Script.js"></script>
+    <link rel="stylesheet" href="~/Content/Side_Pannel_Style.css" />
+    
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <!-- Vertical navbar -->
+    <div>
+        <div class="vertical-nav bg-dark" id="sidebar">
+            <div class="py-4 px-3 mb-4 bg-dark">
+                <div class="media-body">
+                    <h4 class="font-weight-white text-muted mb-0">Exam-Portal</h4>
+                    <p class="font-weight-grey text-muted mb-0">Keep It Up...</p>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @Html.ActionLink("Login", "Student", "Login", new { area = "" }, new { @class = "navbar-brand" })
+            <p class="text-white font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+            <ul class="nav flex-column bg-dark mb-0">
+                <li class="nav-item">
+                    <a href="/Examination/DashBoard" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        DashBoard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Examination/CreateExam" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                        Create Exam
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Papers/Create" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                        Create Paper
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Questions/Create" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                        Create Questions
+                    </a>
+                </li>
+            </ul>
+            <br />
+            <p class="text-white font-weight-bold text-uppercase px-3 small pb-4 mb-0">Extras</p>
+            <ul class="nav flex-column bg-dark mb-0">
+                <li class="nav-item">
+                    <a href="/Login/Login" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        Login <b>Or</b> Sign Up
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Examination/DashBoard" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Examination/Logout" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        Log out
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Examination/DashBoard" class="nav-link text-light font-italic bg-dark">
+                        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                        About
+                    </a>
+                </li>
+            </ul>
+                <!--<p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+        <ul class="nav flex-column bg-dark mb-0">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light font-italic">
+                    <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                    Area charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light font-italic">
+                    <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                    Bar charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light font-italic">
+                    <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+                    Pie charts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light font-italic">
+                    <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+                    Line charts
+                </a>
+            </li>
+        </ul>-->
+        </div>
+        <div class="page-content p-5" id="content">
+            <div class="container body-content">
+                @RenderBody()
 
-                </ul>
+                <br />
+                <footer>
+                <p>&copy; Created By Jaimin Chauhan & Aatish Chaudhari </p>
+            </footer>
             </div>
         </div>
-    </div>
+        </div>
+        <script>
+        try {
+            fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+                return true;
+            }).catch(function (e) {
+                var carbonScript = document.createElement("script");
+                carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+                carbonScript.id = "_carbonads_js";
+                document.getElementById("carbon-block").appendChild(carbonScript);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+        </script>
+        <script type="text/javascript">
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36251023-1']);
+            _gaq.push(['_setDomainName', 'jqueryscript.net']);
+            _gaq.push(['_trackPageview']);
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

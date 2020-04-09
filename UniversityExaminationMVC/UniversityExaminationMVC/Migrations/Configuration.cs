@@ -11,8 +11,6 @@ namespace UniversityExaminationMVC.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-   
-            ContextKey = "UniversityExaminationMVC.Models.DataModelContext";
         }
 
         protected override void Seed(UniversityExaminationMVC.Models.DataModelContext context)

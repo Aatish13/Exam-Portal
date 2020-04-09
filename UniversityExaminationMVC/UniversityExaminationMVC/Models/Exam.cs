@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UniversityExaminationMVC.Models
 {
     public interface Exam_Operation
     {
-        void Create_Exam();
+        int Create_Exam();
         void Schedule_Exam();
         void Addpapers();
     }
@@ -18,23 +19,25 @@ namespace UniversityExaminationMVC.Models
         Exam e;
         Exam_Factory ef;
         DataModelContext db;
-        public Exam_Work(string et,string sem)
+        public Exam_Work(string et,string sem,int brch,DateTime date)
         {
             db = new DataModelContext();
             ef = new Exam_Factory();
             e = ef.GetExam(et);
             e.sem = sem;
-            e.branch = null;
-         }
+            e.BranchId = brch;
+            e.date = date;
+        }
         public void Addpapers()
         {
             throw new NotImplementedException();
         }
 
-        public void Create_Exam()
+        public int Create_Exam()
         {
             db.Exams.Add(e);
             db.SaveChanges();
+            return db.Exams.SingleOrDefault(x => x.date == e.date).Exam_Id;
         }
 
         public void Schedule_Exam()
@@ -68,8 +71,15 @@ namespace UniversityExaminationMVC.Models
         public string type { get; set; }
         [Required]
         public string sem { get; set; }
-        public Branch branch { get; set; }
-        ICollection<Paper> papers { get; set; }
+        [Required]
+        public DateTime date { get; set; }
+
+        [ForeignKey("Branch")]
+        public int BranchId { get; set; }
+
+        public virtual Branch Branch { get; set; }
+
+        public virtual ICollection<Paper> papers { get; set; }
     }
 
     public class Sessional_Exam:Exam

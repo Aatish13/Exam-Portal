@@ -9,32 +9,49 @@ namespace UniversityExaminationMVC.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Student()
+        public ActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Student(FormCollection form)
+        public ActionResult Login(string email,string password)
         {
-            string dob = form["password"];
-            string email = form["email"];
-            if (dob != null && email != null)
+            DataModelContext db = new DataModelContext();
+            Student user = db.Students.SingleOrDefault(x => x.Email == email);
+            if(user!=null && user.Password==password)
             {
-                DataModelContext db = new DataModelContext();
-                Student s = db.Students.SingleOrDefault(x => x.DOB == dob && x.Email == email);
-                if (s != null)
+                Session["UserType"] = "Student";
+                Session["UserID"] = user.Id;
+                Session["UserName"] = user.Name;
+                return RedirectToAction("index", "Test");
+            }
+            else
+            {
+                Faculty user1 = db.Facultys.SingleOrDefault(x => x.Email == email);
+                if (user1 != null && user1.Password == password)
                 {
-                    Session.Add("Student", s);
-                    Session.Add("User", "student");
-                    Response.Redirect("/Examination");
+                    Session["UserType"] = "Faculty";
+                    Session["UserID"] = user1.Id;
+                    Session["UserName"] = user1.Name;
+                    return RedirectToAction("DashBoard", "Examination");
                 }
-                else
-                {
-                    return Student();
-                }
-
             }
             return View();
+        }
+        [HttpPost]
+        public ActionResult Register(string email2,string password2,string optradio)
+        {
+            if(optradio== "Student")
+            {
+                Student_Work sw = new Student_Work();
+                sw.Create_Student("", password2, "", 0, email2, "");
+            }
+            else
+            {
+                Faculty_Work fw = new Faculty_Work();
+                fw.Add_Faculty("", "", "", email2, password2, "");
+            }
+            return RedirectToAction("Login");
         }
         public ActionResult Faculty()
         {
@@ -42,11 +59,9 @@ namespace UniversityExaminationMVC.Controllers
         }
         public ActionResult LogOut()
         {
-            if (Session["User"].ToString() == "student")
-            {
-                Session.Remove("Student");
-            }
-            Response.Redirect("Home");
+            Session.RemoveAll();
+            Session.Abandon();
+            Response.Redirect("/Login");
             return View();
         }
     }
