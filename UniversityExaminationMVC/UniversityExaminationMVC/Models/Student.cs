@@ -15,7 +15,7 @@ namespace UniversityExaminationMVC.Models
         public string Branch;
         public string Email;
         public string Phone;
-        DataModelContext db = new DataModelContext();
+       public static DataModelContext db = new DataModelContext();
         Student s;
         public Student_Work()
         {

@@ -15,7 +15,7 @@ namespace UniversityExaminationMVC.Models
         public string Email;
         public string DOB;
         public Faculty f;
-        public DataModelContext db;
+        public static DataModelContext db=new DataModelContext();
 
         public Faculty_Work()
         {
@@ -33,6 +33,7 @@ namespace UniversityExaminationMVC.Models
             try
             {
                 db.Facultys.Add(f);
+                db.SaveChanges();
                 return 1;
             }
 
